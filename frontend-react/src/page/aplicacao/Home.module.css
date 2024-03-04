@@ -1,0 +1,43 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 0px 0px 0px;
+
+    
+}
+
+.left{
+    padding: 100px 0px 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+}
