@@ -1,6 +1,16 @@
 import styles from "./Home.module.css";
 import "../../styles.css";
 
+import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import ListSubheader from "@mui/material/ListSubheader";
+import IconButton from "@mui/material/IconButton";
+
+import nivea from "../../assets/nivea.svg";
+import logo from "../../assets/logo.png";
+
 export default function Home() {
   return (
     <>
@@ -8,12 +18,12 @@ export default function Home() {
         <div className={styles.left}>
           <div className={styles.top}>
             <div className={styles.icon}>
-              <img src="" alt="icon" />
+              <img src={nivea} />
               <span>
                 Olá <b>NIVEA</b>
               </span>
             </div>
-            <img src="" alt="logo" />
+            <img src={logo} className={styles.logo} alt="logo" />
           </div>
           <div className={styles.navigation}>
             <span>Home</span>
@@ -51,49 +61,41 @@ export default function Home() {
               <span>test</span>
             </div>
           </div>
-          <div className={styles.column}>
-            <div className={styles.rowbigbox}>
-              {/* component */}
-              <div className={styles.bigbox}>
-                <div className={styles.bigbox_top}>
-                  <img src="" alt="iconBox" />
-                  <span>Nome</span>
-                </div>
-                <div className={styles.bigbox_categorybox}>
-                  <div className={styles.bigbox_categories}>
-                    <span>teste</span>
-                    <span>teste</span>
-                    <span>teste</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.bigbox}>
-                <div className={styles.bigbox_top}>
-                  <img src="" alt="iconBox" />
-                  <span>Nome</span>
-                </div>
-                <div className={styles.bigbox_categorybox}>
-                  <div className={styles.bigbox_categories}>
-                    <span>teste</span>
-                    <span>teste</span>
-                    <span>teste</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.bigbox}>
-                <div className={styles.bigbox_top}>
-                  <img src="" alt="iconBox" />
-                  <span>Nome</span>
-                </div>
-                <div className={styles.bigbox_categorybox}>
-                  <div className={styles.bigbox_categories}>
-                    <span>teste</span>
-                    <span>teste</span>
-                    <span>teste</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.column}
+            style={{ overflowY: "auto", overflowX: "hidden", height: "500px" }}
+          >
+            {/*  */}
+            <Grid container spacing={4}>
+              {[...Array(20)].map((_, index) => (
+                <Grid item xs={4} key={index}>
+                  {" "}
+                  {/* Definindo cada imagem para ocupar 1/3 da largura */}
+                  <ImageList sx={{ width: 400, height: 100 }}>
+                    <ImageListItem key={nivea}>
+                      <img
+                        srcSet={`${nivea}`}
+                        src={`${nivea}`}
+                        alt={nivea}
+                        style={{ width: "100%", height: 100 }} // Definindo largura e altura
+                      />
+                      <ImageListItemBar
+                        title={"asdsada"}
+                        subtitle={"asdsada"}
+                        actionIcon={
+                          <IconButton
+                            sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                            aria-label={`info about ${nivea}`}
+                          >
+                            {" "}
+                          </IconButton>
+                        }
+                      />
+                    </ImageListItem>
+                  </ImageList>
+                </Grid>
+              ))}
+            </Grid>
           </div>
         </div>
       </div>
