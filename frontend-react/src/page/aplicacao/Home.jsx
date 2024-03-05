@@ -7,9 +7,13 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
+import CardEmpresa from "../../component/card/Card";
+import Categories from "../../component/SearchCategory";
+
 
 import nivea from "../../assets/nivea.svg";
 import logo from "../../assets/logo.png";
+import SearchCategory from "../../component/SearchCategory";
 
 export default function Home() {
   return (
@@ -39,7 +43,7 @@ export default function Home() {
           <div className={styles.category}>
             <span>Categorias</span>
             <div className={styles.box_category}>
-              <span>test</span>
+              <SearchCategory key={1}/>
             </div>
           </div>
           <div className={styles.end}>
@@ -65,34 +69,10 @@ export default function Home() {
             className={styles.column}
             style={{ overflowY: "auto", overflowX: "hidden", height: "500px" }}
           >
-            {/*  */}
             <Grid container spacing={4}>
               {[...Array(20)].map((_, index) => (
                 <Grid item xs={4} key={index}>
-                  {" "}
-                  {/* Definindo cada imagem para ocupar 1/3 da largura */}
-                  <ImageList sx={{ width: 400, height: 100 }}>
-                    <ImageListItem key={nivea}>
-                      <img
-                        srcSet={`${nivea}`}
-                        src={`${nivea}`}
-                        alt={nivea}
-                        style={{ width: "100%", height: 100 }} // Definindo largura e altura
-                      />
-                      <ImageListItemBar
-                        title={"asdsada"}
-                        subtitle={"asdsada"}
-                        actionIcon={
-                          <IconButton
-                            sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                            aria-label={`info about ${nivea}`}
-                          >
-                            {" "}
-                          </IconButton>
-                        }
-                      />
-                    </ImageListItem>
-                  </ImageList>
+                  <CardEmpresa/>
                 </Grid>
               ))}
             </Grid>
