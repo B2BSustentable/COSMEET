@@ -54,12 +54,6 @@
   gap: 10px;
 }
 
-.box_category {
-  height: 10vh;
-  background-color: #ffffff;
-  border: 1px solid #d9d9d9;
-}
-
 .end {
   display: flex;
   justify-content: space-between;

@@ -41,10 +41,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.category}>
-            <span>Categorias</span>
-            <div className={styles.box_category}>
               <SearchCategory key={1}/>
-            </div>
           </div>
           <div className={styles.end}>
             <b>PREMIUM</b>
