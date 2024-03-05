@@ -1,0 +1,15 @@
+.background {
+    background-color: #1b1b1b;
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: aliceblue;
+    height: 5vh;
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: center;
+    align-items: center;
+}
