@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useAutocomplete } from '@mui/base/useAutocomplete';
-import logo from "../assets/logo.png"
+import close from "../assets/close.png"
 import { styled } from '@mui/material/styles';
 import { autocompleteClasses } from '@mui/material/Autocomplete';
 
@@ -18,11 +18,11 @@ const Label = styled('label')`
   padding: 0 0 4px;
   line-height: 1.5;
   display: block;
-`;
+`;  
 
 const InputWrapper = styled('div')(
   ({ theme }) => `
-  width: 300px;
+  width: 700px;
   border: 1px solid ${theme.palette.mode === 'dark' ? '#434343' : '#d9d9d9'};
   background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
   border-radius: 4px;
@@ -62,7 +62,9 @@ function Tag(props) {
   return (
     <div {...other}>
       <span>{label}</span>
-      <img src={logo} alt=""  />
+      <button onClick={onDelete} style={{ padding: '2px', border: 'none', background: 'none' }}>
+        <img src={close} alt="" style={{ width: '12px', height: '12px' }} />
+      </button>
     </div>
   );
 }
@@ -73,8 +75,8 @@ Tag.propTypes = {
 };
 
 const StyledTag = styled(Tag)(
-  ({ theme }) => `
-  display: flex;
+  ({ theme }) => `display: flex;
+  justify-content: center;
   align-items: center;
   height: 24px;
   margin: 2px;
@@ -121,6 +123,7 @@ const Listbox = styled('ul')(
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1;
+  
 
   & li {
     padding: 5px 12px;
@@ -178,7 +181,7 @@ export default function SearchCategory() {
   return (
     <Root>
       <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}>Customized hook</Label>
+        <Label {...getInputLabelProps()}>Categorias:</Label>
         <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
           {value.map((option, index) => (
             <StyledTag label={option.title} {...getTagProps({ index })} />
@@ -200,10 +203,10 @@ export default function SearchCategory() {
 }
 
 const categories = [
-  { title: 'Batom' },
-  { title: 'Shampoo' },
-  { title: 'Creme' },
-  { title: 'Condicionador' },
-  { title: 'Delineador' },
+  { title: 'Batom', id: 1 },
+  { title: 'Shampoo', id: 2 },
+  { title: 'Creme', id: 3 },
+  { title: 'Condicionador', id:4 },
+  { title: 'Delineador', id: 5 },
 
 ];
