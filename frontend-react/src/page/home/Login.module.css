@@ -1,24 +1,46 @@
-.background {
-    background-color: #f1f1f1;
+.container {
+    display: flex;
     width: 100vw;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    background-color: #f1f1f1;
+    width: 70vw;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    border-radius: 5px;
 }
 
 .info {
     background-color: #f1f1f1;
     width: 50vw;
-    height: 100vh;
+    height: 80vh;
+    border-radius: 5px;
 }
 
 .img {
+    border-radius: 5px;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     background-image: url(../../assets/home/login.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.loginbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
 }

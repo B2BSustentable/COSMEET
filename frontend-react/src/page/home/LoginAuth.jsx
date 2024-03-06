@@ -1,7 +1,7 @@
-import styles from "./Register.module.css";
+import styles from "./LoginAuth.module.css";
 import "../../styles.css";
 
-export default function Register() {
+export default function LoginAuth() {
     return (
         <>
             <div className={styles.container}>

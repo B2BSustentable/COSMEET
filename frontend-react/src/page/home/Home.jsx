@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
 import "../../styles.css";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/home/logo_home.png";
 import foto from "../../assets/home/img_home.png";
@@ -13,8 +13,12 @@ export default function Home() {
         <div className={styles.navbar}>
           <img style={{ cursor: "pointer" }} src={logo} alt="COSMEET" />
           <div className={styles.register}>
+          <Link to="/login">
             <b>Entrar</b>
+          </Link>
+          <Link to="/register" >
             <button>Cadastrar</button>
+          </Link>
           </div>
         </div>
         <div className={styles.main}>
