@@ -5,14 +5,12 @@ import close from "../assets/close.png"
 import { styled } from '@mui/material/styles';
 import { autocompleteClasses } from '@mui/material/Autocomplete';
 
-const Root = styled('div')(
-  ({ theme }) => `
+const Root = styled('div')(({ theme }) => `
   color: ${
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,.85)'
   };
   font-size: 14px;
-`,
-);
+`);
 
 const Label = styled('label')`
   padding: 0 0 4px;
@@ -20,8 +18,7 @@ const Label = styled('label')`
   display: block;
 `;  
 
-const InputWrapper = styled('div')(
-  ({ theme }) => `
+const InputWrapper = styled('div')(({ theme }) => `
   width: 100%;
   border: 1px solid ${theme.palette.mode === 'dark' ? '#434343' : '#d9d9d9'};
   background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
@@ -54,8 +51,7 @@ const InputWrapper = styled('div')(
     margin: 0;
     outline: 0;
   }
-`,
-);
+`);
 
 function Tag(props) {
   const { label, onDelete, ...other } = props;
@@ -74,8 +70,8 @@ Tag.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
-const StyledTag = styled(Tag)(
-  ({ theme }) => `display: flex;
+const StyledTag = styled(Tag)(({ theme }) => `
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 24px;
@@ -107,11 +103,9 @@ const StyledTag = styled(Tag)(
     cursor: pointer;
     padding: 4px;
   }
-`,
-);
+`);
 
-const Listbox = styled('ul')(
-  ({ theme }) => `
+const Listbox = styled('ul')(({ theme }) => `
   width: 300px;
   margin: 2px 0 0;
   padding: 0;
@@ -155,10 +149,9 @@ const Listbox = styled('ul')(
       color: currentColor;
     }
   }
-`,
-);
+`);
 
-export default function SearchCategory() {
+export default function SearchCategory({ onCategoryChange }) {
   const {
     getRootProps,
     getInputLabelProps,
@@ -172,12 +165,22 @@ export default function SearchCategory() {
     setAnchorEl,
   } = useAutocomplete({
     id: 'customized-hook-demo',
-    defaultValue: [], // Definindo a lista de categorias selecionadas como vazia
+    defaultValue: [], 
     multiple: true,
     options: categories,
     getOptionLabel: (option) => option.title,
   });
 
+  const handleDelete = (categoryToDelete) => {
+    onCategoryChange((prevCategories) =>
+      prevCategories.filter((category) => category.id !== categoryToDelete.id)
+    );
+  };
+
+  const handleAdd = (categoryToAdd) => {
+    onCategoryChange((prevCategories) => [...prevCategories, categoryToAdd]);
+  };
+  
   return (
     <Root>
       <div {...getRootProps()}>
@@ -206,6 +209,6 @@ const categories = [
   { title: 'Batom', id: 1 },
   { title: 'Shampoo', id: 2 },
   { title: 'Creme', id: 3 },
-  { title: 'Condicionador', id:4 },
+  { title: 'Condicionador', id: 4 },
   { title: 'Delineador', id: 5 },
 ];
