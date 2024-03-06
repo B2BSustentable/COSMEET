@@ -1,7 +1,6 @@
 import styles from "./Home.module.css";
 import "../../styles.css";
 
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2;
 import CardEmpresa from "../../component/card/Card";
 import HomeLeft from "../../component/homeApp/HomeLeft";
 
@@ -13,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.main}>
-        <HomeLeft/>
+        <HomeLeft />
 
         <div className={styles.right}>
           <div className={styles.filter}>
@@ -22,17 +21,12 @@ export default function Home() {
               <span>test</span>
             </div>
           </div>
-          <div
-            className={styles.column}
-            style={{ overflowY: "auto", overflowX: "hidden", height: "500px" }}
-          >
-            <Grid container spacing={4}>
-              {[...Array(20)].map((_, index) => (
-                <Grid item xs={4} key={index}>
-                  <CardEmpresa />
-                </Grid>
-              ))}
-            </Grid>
+          <div className={styles.columnContainer}>
+            {[...Array(30)].map((_, index) => (
+              <div key={index} className={styles.cardWrapper}>
+                <CardEmpresa />
+              </div>
+            ))}
           </div>
         </div>
       </div>

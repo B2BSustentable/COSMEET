@@ -26,6 +26,7 @@ export default function HomeLeft() {
                 </div>
                 <div className={styles.search}>
                     <span>Pesquisa:</span>
+                    <br />
                     <SearchBar />
                 </div>
                 <div className={styles.category}>
