@@ -43,7 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  max-height: 800px;
+  max-height: 1000px;
   overflow-y: auto;
 }
 

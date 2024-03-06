@@ -8,11 +8,11 @@ import loreal from '../../assets/l-oreal-3.svg';
 
 export default function CardEmpresa() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="100"
           image={loreal} 
           alt="L'Oreal"
         />
