@@ -22,7 +22,7 @@ const Label = styled('label')`
 
 const InputWrapper = styled('div')(
   ({ theme }) => `
-  width: 700px;
+  width: 100%;
   border: 1px solid ${theme.palette.mode === 'dark' ? '#434343' : '#d9d9d9'};
   background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
   border-radius: 4px;
@@ -172,7 +172,7 @@ export default function SearchCategory() {
     setAnchorEl,
   } = useAutocomplete({
     id: 'customized-hook-demo',
-    defaultValue: [categories[1]],
+    defaultValue: [], // Definindo a lista de categorias selecionadas como vazia
     multiple: true,
     options: categories,
     getOptionLabel: (option) => option.title,
@@ -184,7 +184,7 @@ export default function SearchCategory() {
         <Label {...getInputLabelProps()}>Categorias:</Label>
         <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
           {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
+            <StyledTag label={option.title} onDelete={() => handleDelete(option)} {...getTagProps({ index })} />
           ))}
           <input {...getInputProps()} />
         </InputWrapper>
@@ -208,5 +208,4 @@ const categories = [
   { title: 'Creme', id: 3 },
   { title: 'Condicionador', id:4 },
   { title: 'Delineador', id: 5 },
-
 ];

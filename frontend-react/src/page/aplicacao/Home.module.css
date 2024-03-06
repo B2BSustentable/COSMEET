@@ -6,68 +6,6 @@
   padding: 0px 0px 0px 0px;
 }
 
-.left {
-  width: 100%;
-  padding: 30px 50px 50px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo {
-    height: 20px;
-}
-.navigation {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.search {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.search_bar {
-  border-radius: 5px;
-  background-color: #ffffff;
-  border: 1px solid #d9d9d9;
-  height: 1.5em;
-}
-
-.category {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.end {
-  display: flex;
-  justify-content: space-between;
-}
-
-.term {
-  width: 100%;
-}
-
-.term p {
-  font-size: 14px;
-  width: 60%;
-}
-
 /* lado direito */
 .right {
 padding: 20px;
@@ -89,8 +27,35 @@ padding: 20px;
     height: 80px;
 }
 
-.column {
-    display: flex;
+.columnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-height: 800px; 
+  overflow-y: auto; 
+}
 
-    width: 100%;
+.cardWrapper {
+  flex: 0 0 calc(33.33% - 10px); 
+}
+
+.cardWrapper:first-child {
+  margin-left: 0;
+}
+
+.cardWrapper:last-child {
+  margin-right: 0;
+}
+
+.columnContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.columnContainer::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 4px; 
+}
+
+.columnContainer::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
 }
