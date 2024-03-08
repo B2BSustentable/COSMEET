@@ -1,11 +1,11 @@
 package cosmeet.backendjava.main;
 
 import cosmeet.backendjava.application.gateways.UserGateway;
-import cosmeet.backendjava.application.usecases.CreateUserInterface;
-import cosmeet.backendjava.domain.dto.UserDTOMapper;
+import cosmeet.backendjava.application.usecases.user.CreateUserInterface;
+import cosmeet.backendjava.domain.dto.user.UserDTOMapper;
 import cosmeet.backendjava.infraestructure.gateways.UserEntityMapper;
 import cosmeet.backendjava.infraestructure.gateways.UserRepositoryGateway;
-import cosmeet.backendjava.infraestructure.persistence.UserRepository;
+import cosmeet.backendjava.infraestructure.persistence.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

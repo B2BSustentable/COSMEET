@@ -1,4 +1,4 @@
-package cosmeet.backendjava.application.usecases;
+package cosmeet.backendjava.application.usecases.user;
 
 import cosmeet.backendjava.application.gateways.UserGateway;
 import cosmeet.backendjava.domain.entity.User;
@@ -11,6 +11,10 @@ public class CreateUserInterface {
     }
 
     public User createUser(User user) {
-        return userGateway.createUser(user);
+        try {
+            return userGateway.createUser(user);
+        } catch (Exception e) {
+            throw new RuntimeException("Error creating user", e);
+        }
     }
 }

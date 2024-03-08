@@ -1,4 +1,4 @@
-package cosmeet.backendjava.infraestructure.persistence;
+package cosmeet.backendjava.infraestructure.persistence.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,7 +1,5 @@
-package cosmeet.backendjava.domain.dto;
+package cosmeet.backendjava.domain.dto.user;
 
-import cosmeet.backendjava.domain.dto.CreateUserRequest;
-import cosmeet.backendjava.domain.dto.CreateUserResponse;
 import cosmeet.backendjava.domain.entity.User;
 
 public class UserDTOMapper {
@@ -13,6 +11,7 @@ public class UserDTOMapper {
 
     public User toUser(CreateUserRequest request) {
         return new User(
+            null,
             null,
             request.name(),
             request.email(),
