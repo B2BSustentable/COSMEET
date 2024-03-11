@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -17,9 +19,22 @@ public class Plans {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID uuid;
+
     private String name;
+
     private Double price;
+
     private Boolean favorite;
+
     private Boolean limitSearch;
+
     private Integer limitCategory;
+
+    @PrePersist
+    public void generateUUID() {
+        this.uuid = UUID.randomUUID();
+    }
 }

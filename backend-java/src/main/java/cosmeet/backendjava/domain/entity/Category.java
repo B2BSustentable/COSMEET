@@ -1,9 +1,6 @@
-package cosmeet.backendjava.infraestructure.persistence.user;
+package cosmeet.backendjava.domain.entity;
 
-import cosmeet.backendjava.domain.entity.Business;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,8 +14,8 @@ import java.util.UUID;
 @Setter
 
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,14 +23,7 @@ public class UserEntity {
     @Column(columnDefinition = "BINARY(16)")
     private UUID uuid;
 
-    @NotBlank
     private String name;
-
-    @Email(message = "Email should be valid")
-    private String email;
-
-    @NotBlank
-    private String password;
 
     @PrePersist
     public void generateUUID() {

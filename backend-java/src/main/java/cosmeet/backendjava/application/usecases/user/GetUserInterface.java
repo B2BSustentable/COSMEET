@@ -11,6 +11,10 @@ public class GetUserInterface {
     }
 
     public User getUser(User user) {
-        return userGateway.getUser(user.getEmail(), user.getPassword());
+        try {
+            return userGateway.getUser(user);
+        } catch (Exception e) {
+            throw new RuntimeException("Error getting user", e);
+        }
     }
 }

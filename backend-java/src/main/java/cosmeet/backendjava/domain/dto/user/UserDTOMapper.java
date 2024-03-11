@@ -3,9 +3,18 @@ package cosmeet.backendjava.domain.dto.user;
 import cosmeet.backendjava.domain.entity.User;
 
 public class UserDTOMapper {
-    public CreateUserResponse toResponse(User user) {
+    public CreateUserResponse toCreateResponse(User user) {
         return new CreateUserResponse(
-                user.getName(), user.getEmail()
+                user.getName(),
+                user.getEmail()
+        );
+    }
+
+    public GetUserResponse toGetResponse(User user) {
+        return new GetUserResponse(
+                user.getUuid(),
+                user.getName(),
+                user.getEmail()
         );
     }
 
@@ -16,6 +25,16 @@ public class UserDTOMapper {
             request.name(),
             request.email(),
             request.password()
+        );
+    }
+
+    public User toUser(GetUserRequest request) {
+        return new User(
+                null,
+                null,
+                null,
+                request.email(),
+                request.password()
         );
     }
 }

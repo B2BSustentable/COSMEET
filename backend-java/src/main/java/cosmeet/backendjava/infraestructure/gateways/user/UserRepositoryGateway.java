@@ -1,4 +1,4 @@
-package cosmeet.backendjava.infraestructure.gateways;
+package cosmeet.backendjava.infraestructure.gateways.user;
 
 import cosmeet.backendjava.application.gateways.UserGateway;
 import cosmeet.backendjava.domain.entity.User;
@@ -23,7 +23,10 @@ public class UserRepositoryGateway implements UserGateway {
     }
 
     @Override
-    public User getUser(String email, String password) {
-        return null;
+    public User getUser(User userDomainObj) {
+        UserEntity userEntity = userEntityMapper.toEntity(userDomainObj);
+        UserEntity savedUserEntity = userRepository.findByEmail(userEntity.getEmail());
+
+        return userEntityMapper.toDomainObj(savedUserEntity);
     }
 }

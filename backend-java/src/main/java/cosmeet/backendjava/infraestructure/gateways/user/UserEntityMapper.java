@@ -1,4 +1,4 @@
-package cosmeet.backendjava.infraestructure.gateways;
+package cosmeet.backendjava.infraestructure.gateways.user;
 
 import cosmeet.backendjava.domain.entity.User;
 import cosmeet.backendjava.infraestructure.persistence.user.UserEntity;
