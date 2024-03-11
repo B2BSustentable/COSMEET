@@ -1,8 +1,6 @@
-import * as React from 'react';
 import styles from "../homeApp/HomeLeft.module.css"
 import nivea from "../../assets/nivea.svg";
 import logo from "../../assets/logo.png";
-import search from "../../assets/search.svg";
 
 import SearchCategory from "../../component/SearchCategory";
 import Navigation from "../Navigation"

@@ -12,6 +12,7 @@ export default function EditProfile() {
                         <b>Nome</b>
                         <span>Distribuidor</span>
                         <span>Guarulhos, São Paulo, Brazil</span>
+                        <button>Editar Perfil</button>
                     </div>
                 </div>
                 <img src="" alt="X" />
