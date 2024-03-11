@@ -1,10 +1,28 @@
 import * as React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    switch (location.pathname) {
+      case '/home':
+        setValue(0);
+        break;
+      case '/profile':
+        setValue(1);
+        break;
+      case '/dashboard':
+        setValue(2);
+        break;
+      default:
+        setValue(0);
+    }
+  }, [location]);
 
   return (
     <Box sx={{ width: 500 }}>
@@ -16,18 +34,18 @@ export default function SimpleBottomNavigation() {
         }}
         sx={{
           "& .Mui-selected": {
-            borderBottom: "2px solid black",
+            borderBottom: "1px solid black",
             fontWeight: "bold",
             color: "black"
           },
           "& .MuiBottomNavigationAction-root": {
-            borderBottom: "none" // Remove a borda inferior dos itens não selecionados
+            borderBottom: "none" 
           }
         }}
       >
-        <BottomNavigationAction label="Home" />
-        <BottomNavigationAction label="Perfil" />
-        <BottomNavigationAction label="Dashboard" />
+        <BottomNavigationAction label="Home" component={Link} to="/home" />
+        <BottomNavigationAction label="Perfil" component={Link} to="/profile" />
+        <BottomNavigationAction label="Dashboard" component={Link} to="/dashboard" />
       </BottomNavigation>
     </Box>
   );

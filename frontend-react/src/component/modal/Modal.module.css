@@ -1,0 +1,130 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    height: 80%;
+    width: 80%
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modalBody {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.modalLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.modalLeft,
+.modalRight {
+    flex: 1;
+}
+
+.modalTopo {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+.modalInfoGeral {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input label {
+    font-size: 12px;
+}
+
+.input input {
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.input_city {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modalRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalAbout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textArea {
+    width: 100%;
+    height: 240px;
+    resize: none; /* Impedindo o redimensionamento do textarea pelo usuário */
+    margin-bottom: 10px;
+}
+
+.modalContact {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.modalContact .input {
+    display: flex;
+    gap: 10px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.modalImg img {
+    height: 140px;
+    border-radius: 100px;
+}
+
