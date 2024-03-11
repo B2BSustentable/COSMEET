@@ -1,0 +1,66 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.topo img {
+    height: 30vh;
+}
+
+.img_info {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.info {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.contato h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.tel {
+    display: flex;
+    font-size: 14px;
+}
+.email {
+    display: flex;
+    font-size: 14px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.description h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.description_company p {
+    letter-spacing: 1px;
+    font-size: 14px;
+}

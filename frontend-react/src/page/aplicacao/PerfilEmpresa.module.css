@@ -1,0 +1,17 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 0px 0px 0px;
+  }
+  
+  /* lado direito */
+  .right {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 245, 245);
+  }
+  
