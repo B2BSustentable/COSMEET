@@ -7,7 +7,6 @@ public class UserEntityMapper {
     UserEntity toEntity(User userDomainObj) {
         return new UserEntity(
                 null,
-                userDomainObj.getUuid(),
                 userDomainObj.getName(),
                 userDomainObj.getEmail(),
                 userDomainObj.getPassword()
@@ -17,7 +16,6 @@ public class UserEntityMapper {
     User toDomainObj(UserEntity userEntity) {
         return new User(
                 userEntity.getId(),
-                userEntity.getUuid(),
                 userEntity.getName(),
                 userEntity.getEmail(),
                 userEntity.getPassword()

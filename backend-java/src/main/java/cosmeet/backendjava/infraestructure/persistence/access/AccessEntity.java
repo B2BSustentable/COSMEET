@@ -21,17 +21,9 @@ public class AccessEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID uuid;
-
     private Integer count;
 
     @OneToOne
-    @JoinColumn(name = "business_uuid")
+    @JoinColumn(name = "business_id", referencedColumnName = "id")
     private Business business;
-
-    @PrePersist
-    public void generateUUID() {
-        this.uuid = UUID.randomUUID();
-    }
 }

@@ -9,11 +9,22 @@ public class BusinessDTOMapper {
 
     public Business toBusiness(CreateBusinessRequest request) {
         return new Business(
+                null,
+                request.name(),
+                request.email(),
+                request.phone(),
+                request.cnpj(),
+                request.occupation(),
+                request.about(),
+                request.photo(),
+                request.user(),
+                request.plans()
         );
     }
 
     public CreateBusinessResponse toCreateResponse(Business business) {
         return new CreateBusinessResponse(
+                business.getId(),
                 business.getName(),
                 business.getEmail()
         );

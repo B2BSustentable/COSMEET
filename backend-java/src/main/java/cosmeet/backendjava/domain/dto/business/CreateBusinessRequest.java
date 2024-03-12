@@ -1,19 +1,18 @@
 package cosmeet.backendjava.domain.dto.business;
 
-import java.util.UUID;
+import cosmeet.backendjava.domain.entity.Plans;
+import cosmeet.backendjava.domain.entity.User;
 
 public record CreateBusinessRequest (
     String name,
     String email,
     String phone,
-    String CNPJ,
+    String cnpj,
     String about,
     String photo,
-    Boolean active,
-    Boolean deleted,
-    Boolean verified,
-    UUID user,
-    UUID plans,
-    UUID category
+    String occupation,
+
+    User user,
+    Plans plans
 ) {
 }

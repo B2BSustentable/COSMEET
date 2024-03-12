@@ -12,7 +12,7 @@ public class UserDTOMapper {
 
     public GetUserResponse toGetResponse(User user) {
         return new GetUserResponse(
-                user.getUuid(),
+                user.getId(),
                 user.getName(),
                 user.getEmail()
         );
@@ -20,7 +20,6 @@ public class UserDTOMapper {
 
     public User toUser(CreateUserRequest request) {
         return new User(
-            null,
             null,
             request.name(),
             request.email(),
@@ -30,7 +29,6 @@ public class UserDTOMapper {
 
     public User toUser(GetUserRequest request) {
         return new User(
-                null,
                 null,
                 null,
                 request.email(),

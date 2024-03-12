@@ -21,9 +21,6 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID uuid;
-
     @NotBlank
     private String street;
 
@@ -44,11 +41,6 @@ public class Address {
     private String longitude;
 
     @OneToOne
-    @JoinColumn(name = "business_uuid")
+    @JoinColumn(name = "business_id", referencedColumnName = "id")
     private Business business;
-
-    @PrePersist
-    public void generateUUID() {
-        this.uuid = UUID.randomUUID();
-    }
 }

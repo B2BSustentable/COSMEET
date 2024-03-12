@@ -9,38 +9,30 @@ public class BusinessEntityMapper {
     BusinessEntity toEntity(Business userDomainObj) {
         return new BusinessEntity(
             null,
-            userDomainObj.getUuid(),
             userDomainObj.getName(),
             userDomainObj.getEmail(),
             userDomainObj.getPhone(),
             userDomainObj.getCnpj(),
+            userDomainObj.getOccupation(),
             userDomainObj.getAbout(),
             userDomainObj.getPhoto(),
-            userDomainObj.getActive(),
-            userDomainObj.getDeleted(),
-            userDomainObj.getVerified(),
             userDomainObj.getUser(),
-            userDomainObj.getPlans(),
-            userDomainObj.getCategory()
+            userDomainObj.getPlans()
         );
     }
 
     Business toDomainObj(BusinessEntity businessEntity) {
         return new Business(
             businessEntity.getId(),
-            businessEntity.getUuid(),
             businessEntity.getName(),
             businessEntity.getEmail(),
             businessEntity.getPhone(),
             businessEntity.getCnpj(),
+            businessEntity.getOccupation(),
             businessEntity.getAbout(),
             businessEntity.getPhoto(),
-            businessEntity.getActive(),
-            businessEntity.getDeleted(),
-            businessEntity.getVerified(),
             businessEntity.getUser(),
-            businessEntity.getPlans(),
-            businessEntity.getCategory()
+            businessEntity.getPlans()
         );
     }
 }

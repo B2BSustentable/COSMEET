@@ -28,9 +28,6 @@ public class BusinessEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID uuid;
-
     @NotBlank
     private String name;
 
@@ -43,24 +40,14 @@ public class BusinessEntity {
     @CNPJ
     private String cnpj;
 
+    private String occupation;
     private String about;
     private String photo;
-    private Boolean active;
-    private Boolean deleted;
-    private Boolean verified;
 
     @OneToOne
-    @JoinColumn(name = "users_uuid")
+    @JoinColumn(name = "users_id", referencedColumnName = "id")
     private User user;
     @OneToOne
-    @JoinColumn(name = "plans_uuid")
+    @JoinColumn(name = "plans_id", referencedColumnName = "id")
     private Plans plans;
-    @OneToOne
-    @JoinColumn(name = "category_uuid")
-    private Category category;
-
-    @PrePersist
-    public void generateUUID() {
-        this.uuid = UUID.randomUUID();
-    }
 }

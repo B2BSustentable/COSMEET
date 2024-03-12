@@ -23,9 +23,6 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID uuid;
-
     @NotBlank
     private String name;
 
@@ -34,9 +31,4 @@ public class UserEntity {
 
     @NotBlank
     private String password;
-
-    @PrePersist
-    public void generateUUID() {
-        this.uuid = UUID.randomUUID();
-    }
 }

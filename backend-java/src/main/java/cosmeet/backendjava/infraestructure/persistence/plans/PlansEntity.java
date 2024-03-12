@@ -21,9 +21,6 @@ public class PlansEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID uuid;
-
     private String name;
 
     private Double price;
@@ -33,9 +30,4 @@ public class PlansEntity {
     private Boolean limitSearch;
 
     private Integer limitCategory;
-
-    @PrePersist
-    public void generateUUID() {
-        this.uuid = UUID.randomUUID();
-    }
 }
