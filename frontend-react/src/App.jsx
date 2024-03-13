@@ -4,7 +4,9 @@ import HomeFirst from './page/home/Home';
 import Login from './page/home/Login';
 import Register from './page/home/Register';
 import Plans from './page/home/Planos';
-import PerfilEmpresa from './page/aplicacao/PerfilEmpresa';
+
+import ProfileCompany from './page/aplicacao/ProfileCompany';
+import Profile from './page/aplicacao/Profile';
 // import Payment from './page/home/Pagamentos';
 
 function App() {
@@ -18,7 +20,8 @@ function App() {
         {/* <Route path="/payment" element={<Payment />} /> */}
 
         <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<PerfilEmpresa />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/company" element={<ProfileCompany />} />
 
       </Routes>
     </Router>
