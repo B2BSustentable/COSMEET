@@ -17,7 +17,7 @@ export default function Register() {
                                 <Link to="/">
                                     <img src={Voltar} alt="Logotipo da Doameer" />
                                 </Link>
-                                <img src={Logo} alt="Imagem de um escritório moderno com pessoas trabalhando." />
+                                <img className={styles.logo} src={Logo} alt="Imagem de um escritório moderno com pessoas trabalhando." />
                             </div>
 
                             <div className={styles.text}>

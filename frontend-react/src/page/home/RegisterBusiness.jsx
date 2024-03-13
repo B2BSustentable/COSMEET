@@ -17,7 +17,7 @@ export default function RegisterBusiness() {
                                 <Link to="/register">
                                     <img src={Voltar} alt="Logotipo da Doameer" />
                                 </Link>
-                                <img src={Logo} alt="Imagem de um escritório moderno com pessoas trabalhando." />
+                                <img className={styles.logo} src={Logo} alt="Imagem de um escritório moderno com pessoas trabalhando." />
                             </div>
 
                             <div className={styles.text}>
@@ -48,6 +48,11 @@ export default function RegisterBusiness() {
                             </div>
 
                             <div className={styles.footer}>
+                                <p>Já tem conta?
+                                    <Link to="/login">
+                                        Clique Aqui
+                                    </Link>
+                                </p>
                             </div>
 
                         </div>

@@ -18,8 +18,12 @@
     align-items: center;
 }
 
+.navbar img {
+    height: 50%;
+}
+
 .register {
-    width: 12vw;
+    width: 15vw;
     border-radius: 5px;
     display: flex;
     align-items: center;

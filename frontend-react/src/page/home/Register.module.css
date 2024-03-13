@@ -57,6 +57,10 @@
     height: 10%;
 }
 
+.logo {
+    height: 80%;
+}
+
 .loginbox .text {
     width: 100%;
     height: 5%;
@@ -90,7 +94,6 @@
     border: none;
     border-bottom: 1px solid #000;
     outline: none;
-    margin-bottom: 20px;
     font-weight: 200;
     font-size: 10px;
 }
@@ -142,7 +145,6 @@
 
 .loginbox .footer {
     width: 100%;
-    height: 10%;
     font-size: 0.8vw;
     gap: 10px;
     font-weight: 400;
