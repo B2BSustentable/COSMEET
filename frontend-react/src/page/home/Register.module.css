@@ -4,6 +4,8 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: #f1f1f1;
+
 }
 
 .background {
@@ -17,19 +19,135 @@
     border-radius: 5px;
 }
 
-.info {
-    background-color: #f1f1f1;
-    width: 50vw;
+.info,
+.img {
+    width: 50%;
     height: 100%;
+}
+
+.info {
+    background-color: #ffffff;
     border-radius: 5px;
+    justify-content: space-between;
+    display: flex;
 }
 
 .img {
-    border-radius: 5px;
-    width: 50vw;
-    height: 100%;
-    background-image: url(../../assets/home/register.png);
+    border-radius: 0px 5px 5px 0px;
+    background-image: url(../../assets/home/login.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.loginbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 2vw 5vw;
+    width: 100%;
+}
+
+.loginbox .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.loginbox .text {
+    width: 100%;
+    height: 5%;
+    font-size: 1vw;
+    gap: 10px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbox .form {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form .input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input input {
+    padding: 0.5vw;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 10px;
+}
+
+.input label {
+    font-size: 0.7vw;
+    font-weight: 300;
+}
+
+.form .remember {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.8vw;
+}
+
+.form .button {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.button .btn_login {
+    width: 100%;
+    height: 40%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.button .btn_register {
+    width: 50%;
+    height: 40%;
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.loginbox .footer {
+    width: 100%;
+    height: 10%;
+    font-size: 0.8vw;
+    gap: 10px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

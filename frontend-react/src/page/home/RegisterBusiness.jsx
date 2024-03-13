@@ -1,11 +1,11 @@
-import styles from "./Register.module.css";
+import styles from "./RegisterBusiness.module.css";
 import "../../styles.css";
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/home/logo.png";
 import Voltar from "../../assets/home/close_button_img.svg";
 
-export default function Register() {
+export default function RegisterBusiness() {
     return (
         <>
             <div className={styles.container}>
@@ -14,7 +14,7 @@ export default function Register() {
                     <div className={styles.info}>
                         <div className={styles.loginbox}>
                             <div className={styles.top}>
-                                <Link to="/">
+                                <Link to="/register">
                                     <img src={Voltar} alt="Logotipo da Doameer" />
                                 </Link>
                                 <img src={Logo} alt="Imagem de um escritório moderno com pessoas trabalhando." />
@@ -26,19 +26,21 @@ export default function Register() {
 
                             <div className={styles.form}>
                                 <div className={styles.input}>
-                                    <label htmlFor="">Nome Completo:</label>
+                                    <label htmlFor="">Nome Empresa:</label>
                                     <input type="email" name="email" placeholder="Digite seu e-mail" required />
-                                    <label htmlFor="">Email Pessoal:</label>
+                                    <label htmlFor="">Área de Atuação:</label>
                                     <input type="password" name="password" placeholder="Digite sua senha" required />
-                                    <label htmlFor="">Senha:</label>
+                                    <label htmlFor="">Telefone:</label>
                                     <input type="password" name="password" placeholder="Digite sua senha" required />
-                                    <label htmlFor="">Confirmar Senha:</label>
+                                    <label htmlFor="">Email Empresarial:</label>
+                                    <input type="password" name="password" placeholder="Digite sua senha" required />
+                                    <label htmlFor="">CNPJ:</label>
                                     <input type="password" name="password" placeholder="Digite sua senha" required />
                                 </div>
 
                                 <div className={styles.button}>
                                     <button type="submit" className={styles.btn_login}>
-                                        <Link to="/register/business" style={{textDecoration:"none", color:"white"}}>
+                                        <Link to="/register/plans" style={{textDecoration:"none", color:"white"}}>
                                             Próximo
                                         </Link>
                                     </button>
@@ -46,11 +48,6 @@ export default function Register() {
                             </div>
 
                             <div className={styles.footer}>
-                                <p>Já tem conta?
-                                    <Link to="/login">
-                                        Clique Aqui
-                                    </Link>
-                                </p>
                             </div>
 
                         </div>
