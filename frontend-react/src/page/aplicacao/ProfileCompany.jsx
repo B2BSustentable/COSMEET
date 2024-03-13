@@ -1,4 +1,3 @@
-import EditProfile from '../../component/EditProfile';
 import CardPerfilCompleto from '../../component/card/CardPerfilCompleto';
 import HomeLeft from '../../component/homeApp/HomeLeft';
 import styles from "./Profile.module.css";
