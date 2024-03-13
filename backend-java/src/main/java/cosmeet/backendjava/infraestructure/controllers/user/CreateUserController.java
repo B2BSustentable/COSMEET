@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class CreateUserController {
     private final CreateUserInterface createUserInterface;
 
-    public UserController(CreateUserInterface createUserInterface) {
+    public CreateUserController(CreateUserInterface createUserInterface) {
         this.createUserInterface = createUserInterface;
     }
 
@@ -25,6 +25,6 @@ public class UserController {
 
         return ResponseEntity
                 .status(201)
-                .body(new UserDTOMapper().toResponse(createdUser));
+                .body(new UserDTOMapper().toCreateResponse(createdUser));
     }
 }

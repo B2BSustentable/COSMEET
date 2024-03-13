@@ -1,10 +1,15 @@
 package cosmeet.backendjava.domain.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CNPJ;
+
+import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,23 +22,27 @@ public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // REFERENCIAR O ID USER;
-    private Long idUser;
-    // REFERENCIAR O ID ADDRESS;
-    private Long idAddress;
-    // REFERENCIAR O ID ACCESS;
-    private Long idAccess;
-    // REFERENCIAR O ID PLANS;
-    private Long idPlans;
 
+    @NotBlank
     private String name;
+
+    @Email(message = "Email should be valid")
     private String email;
+
+    @NotBlank
     private String phone;
+
+    @CNPJ
     private String cnpj;
 
-    private Boolean active;
-    private Boolean deleted;
-    private Boolean verified;
+    private String occupation;
+    private String about;
+    private String photo;
 
-
+    @OneToOne
+    @JoinColumn(name = "users_id", referencedColumnName = "id")
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "plans_id", referencedColumnName = "id")
+    private Plans plans;
 }

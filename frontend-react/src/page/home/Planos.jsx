@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Planos.module.css";
+import { Link } from "react-router-dom";
 
 import CloseButtonImg from "../../assets/home/close_button_img.svg";
-import LogoImg from "../../assets/home/logo.svg";
+import LogoImg from "../../assets/home/logo.png";
 import Confirm from "../../assets/home/confirm.svg";
 
 import { useState } from "react";
@@ -63,7 +64,9 @@ function Planos() {
                 <div className={styles.container_plan}>
                     <div className={styles.container_up}>
                         <div className={styles.register_close}>
-                            <img src={CloseButtonImg} alt="" />
+                            <Link to="/register/business">
+                                <img src={CloseButtonImg} alt="" />
+                            </Link>
                             <img src={LogoImg} alt="" />
                         </div>
                         <div className={styles.register_content}>
@@ -88,7 +91,7 @@ function Planos() {
                                     </div>
                                     <div className={styles.register_content_info_left2}>
                                         <div className={styles.register_content_info_span2}>
-                                            <span>Quantidade de Negociantes</span>
+                                            <span>Quantidade de Categorias</span>
                                         </div>
                                         <div className={styles.register_content_info_span2}>
                                             <span>Valor do Plano</span>

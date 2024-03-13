@@ -1,4 +1,10 @@
 package cosmeet.backendjava.domain.dto.user;
 
-public record GetUserResponse (String uuid, String name, String email) {
+import java.util.UUID;
+
+public record GetUserResponse (
+        Long id,
+        String name,
+        String email
+) {
 }

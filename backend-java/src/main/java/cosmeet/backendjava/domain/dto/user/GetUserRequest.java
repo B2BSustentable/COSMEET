@@ -1,4 +1,7 @@
 package cosmeet.backendjava.domain.dto.user;
 
-public record GetUserRequest (String email, String password) {
+public record GetUserRequest (
+        String email,
+        String password
+) {
 }
