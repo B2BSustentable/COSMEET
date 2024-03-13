@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,12 +12,6 @@ export default function CardEmpresa() {
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-  };
-
-  const handleMoreInfoClick = () => {
-    // Aqui você pode definir o que acontecerá ao clicar no botão "Mais informações"
-    // Por exemplo, redirecionar para o perfil completo da empresa
-    console.log('Abrir perfil completo da empresa');
   };
 
   return (
@@ -41,7 +36,7 @@ export default function CardEmpresa() {
             </Typography>
           )}
           {expanded && (
-            <Button onClick={handleMoreInfoClick} color="primary">
+            <Button component={Link} to="/company" color="primary">
               Mais informações
             </Button>
           )}

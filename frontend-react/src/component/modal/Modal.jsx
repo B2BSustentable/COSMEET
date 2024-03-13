@@ -1,11 +1,11 @@
 import styles from './Modal.module.css';
 
-const ModalContent = () => {
+const ModalContent = ({ onClose }) => {
     return (
         <div className={styles.modal}>
             <div className={styles.modalContent}>
                 <div className={styles.modalHeader}>
-                    <button className={styles.closeButton}>
+                    <button className={styles.closeButton} onClick={onClose}>
                         Fechar
                     </button>
                 </div>

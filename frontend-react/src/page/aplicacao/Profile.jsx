@@ -1,9 +1,9 @@
 import EditProfile from '../../component/EditProfile';
 import HomeLeft from '../../component/homeApp/HomeLeft';
-import styles from "./PerfilEmpresa.module.css";
+import styles from "./Profile.module.css";
 
 
-export default function PerfilEmpresa() {
+export default function Profile() {
     return(
         <>
         <div className={styles.main}>
