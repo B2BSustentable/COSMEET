@@ -1,21 +1,13 @@
 import { useState, useEffect, useCallback} from 'react';
 import Modal from './modal/Modal';
-import { } from "../../../functions/funcoes";
 import "../../src/styles.css";
 import styles from "./EditProfile.module.css";
 import nivea from "../assets/nivea.svg";
-
-import { buscarEmpresa } from "../function/funcoes";
 
 
 export default function EditProfile() {
     const [modalOpen, setModalOpen] = useState(false);
     const [empresaInfo, setEmpresaInfo] = useState(null);
-
-    const fetchGetEmpresa = useCallback(async () => {
-        let response = await buscarEmpresa(window.sessionStorage.getItem("emailEmpresa"));
-        setEmpresaInfo(response);
-    });
 
     useEffect(() => {
         fetchGetEmpresa();
