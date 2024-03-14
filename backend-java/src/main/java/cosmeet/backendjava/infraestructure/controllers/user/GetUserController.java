@@ -6,10 +6,7 @@ import cosmeet.backendjava.domain.dto.user.*;
 import cosmeet.backendjava.domain.entity.User;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -21,7 +18,8 @@ public class GetUserController {
     }
 
     @GetMapping
-    ResponseEntity<GetUserResponse> getUser(@Valid @RequestBody GetUserRequest request) {
+    ResponseEntity<GetUserResponse> getUser(@RequestParam("email") String email, @RequestParam("password") String password) {
+        GetUserRequest request = new GetUserRequest(email, password);
         User user = new UserDTOMapper().toUser(request);
         User getUser = getUserInterface.getUser(user);
 
