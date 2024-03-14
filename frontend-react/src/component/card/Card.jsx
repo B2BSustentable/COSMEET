@@ -37,7 +37,7 @@ export default function CardEmpresa() {
           )}
           {expanded && (
             <Button component={Link} to="/company" color="primary">
-              Mais informações
+              Mais informações  
             </Button>
           )}
         </CardContent>
