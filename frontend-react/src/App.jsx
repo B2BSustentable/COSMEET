@@ -6,7 +6,10 @@ import LoginAuth from './page/home/LoginAuth';
 import Register from './page/home/Register';
 import RegisterBusiness from './page/home/RegisterBusiness';
 import Plans from './page/home/Planos';
-import PerfilEmpresa from './page/aplicacao/PerfilEmpresa';
+
+import ProfileCompany from './page/aplicacao/ProfileCompany';
+import Profile from './page/aplicacao/Profile';
+
 
 function App() {
   return (
@@ -20,7 +23,8 @@ function App() {
         <Route path="/register/plans" element={<Plans />} />
 
         <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<PerfilEmpresa />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/company" element={<ProfileCompany />} />
 
       </Routes>
     </Router>
