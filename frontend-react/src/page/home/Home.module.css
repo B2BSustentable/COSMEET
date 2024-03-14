@@ -19,13 +19,13 @@
 }
 
 .navbar img {
-    height: 50%;
+    height: 5vh;
 }
 
 .register {
-    width: 15vw;
     border-radius: 5px;
     display: flex;
+    gap: 5vw;
     align-items: center;
     justify-content: space-between;
 }

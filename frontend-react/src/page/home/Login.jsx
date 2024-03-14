@@ -1,11 +1,37 @@
+import React, { useState, useEffect } from "react";
 import styles from "./Login.module.css";
 import "../../styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../../assets/home/logo.png";
 import Voltar from "../../assets/home/close_button_img.svg";
 
+import { loginUser } from "../../../api/services/user";
+
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const Navigate = useNavigate();
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const login = async () => {
+        const response = await loginUser(email, password);
+        if (response.status === 200) {
+            console.log("Login realizado com sucesso");
+            Navigate("/login/auth")
+        } else {
+            console.log("Erro ao realizar login" + response.status);
+            alert("Erro ao realizar login");
+        }
+    }
+
     return (
         <>
             <div className={styles.container}>
@@ -28,9 +54,11 @@ export default function Login() {
                             <div className={styles.form}>
                                 <div className={styles.input}>
                                     <label htmlFor="">Email:</label>
-                                    <input type="email" name="email" placeholder="Digite seu e-mail" required />
+                                    <input onChange={handleEmail}
+                                     type="email" name="email" placeholder="Digite seu e-mail" required />
                                     <label htmlFor="">Senha:</label>
-                                    <input type="password" name="password" placeholder="Digite sua senha" required />
+                                    <input onChange={handlePassword}
+                                     type="password" name="password" placeholder="Digite sua senha" required />
                                 </div>
                                 <div className={styles.remember}>
                                     <label for="remember-me">
@@ -39,10 +67,8 @@ export default function Login() {
                                     <a href="#">Esqueci a Senha</a>
                                 </div>
                                 <div className={styles.button}>
-                                    <button type="submit" className={styles.btn_login}>
-                                        <Link to="/login/auth" style={{textDecoration:"none", color:"white"}}>
+                                    <button onClick={login} type="submit" className={styles.btn_login}>
                                             Logar
-                                        </Link>
                                     </button>
                                     <button type="submit" className={styles.btn_register}>
                                         <Link to="/register" style={{textDecoration:"none", color:"black"}}>

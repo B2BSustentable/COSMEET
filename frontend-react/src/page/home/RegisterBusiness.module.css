@@ -58,7 +58,7 @@
 }
 
 .logo {
-    height: 80%;
+    height: 5vh;
 }
 
 .loginbox .text {
@@ -124,7 +124,7 @@
 .button .btn_login {
     margin-top: 20px;
     width: 100%;
-    height: 70%;
+    height: 5vh;
     background-color: #000;
     color: #fff;
     border: none;
