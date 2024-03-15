@@ -24,6 +24,18 @@
     gap: 20px;
 }
 
+.close_unfav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.img_close {
+    height: 25px !important; 
+    padding-right: 30px;
+    cursor: pointer;
+}
+
 .info {
     padding-top: 20px;
     display: flex;
