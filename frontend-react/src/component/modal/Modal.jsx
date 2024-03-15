@@ -83,7 +83,7 @@ const ModalContent = ({ onClose }) => {
                     </div>
                 </div>
                 <div className={styles.modalFooter}>
-                    <button>Salvar</button>
+                    <button className={styles.botao}>Salvar</button>
                 </div>
             </div>
         </div>
