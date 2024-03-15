@@ -9,9 +9,9 @@ export default function EditProfile() {
     const [modalOpen, setModalOpen] = useState(false);
     const [empresaInfo, setEmpresaInfo] = useState(null);
 
-    useEffect(() => {
-        fetchGetEmpresa();
-    }, []);
+    // useEffect(() => {
+    //     fetchGetEmpresa();
+    // }, []);
 
     const handleOpenModal = () => {
         setModalOpen(true);
@@ -23,16 +23,15 @@ export default function EditProfile() {
 
     return (
         <div className={styles.container}>
-            {empresaInfo && (
                 <>
                     <div className={styles.topo}>
                         <div className={styles.img_info}>
                             <img src={nivea} alt="" />
                             <div className={styles.info}>
-                                <b>{empresaInfo.nome}</b>
-                                <span>{empresaInfo.tipo}</span> 
-                                <span>{empresaInfo.endereco}</span>
-                                <button onClick={handleOpenModal}>Editar Perfil</button>
+                                {/* <b>{empresaInfo.nome}</b> */}
+                                {/* <span>{empresaInfo.tipo}</span>  */}
+                                {/* <span>{empresaInfo.endereco}</span> */}
+                                <button className={styles.botao} onClick={handleOpenModal}>Editar Perfil</button>
                             </div>
                         </div>
                     </div>
@@ -40,23 +39,22 @@ export default function EditProfile() {
                     <div className={styles.contato}>
                         <h1>Contatos</h1>
                         <div className={styles.tel}>
-                            <span><b>tel</b>: {empresaInfo.telefone}</span> 
+                            {/* <span><b>tel</b>: {empresaInfo.telefone}</span>  */}
                         </div>
                         <div className={styles.email}>
-                            <span><b>e-mail</b>: {empresaInfo.email}</span> 
+                            {/* <span><b>e-mail</b>: {empresaInfo.email}</span>  */}
                         </div>
                     </div>
 
                     <div className={styles.description}>
                         <h1>Sobre</h1>
                         <div className={styles.description_company}>
-                            <p>{empresaInfo.descricao}</p> 
+                            {/* <p>{empresaInfo.descricao}</p>  */}
                         </div>
                     </div>
 
                     {modalOpen && <Modal onClose={handleCloseModal} empresaInfo={empresaInfo} />}
                 </>
-            )}
         </div>
     )
 }

@@ -32,7 +32,7 @@ export default function HomeLeft() {
                 </div>
                 <div className={styles.end}>
                     <b>PREMIUM</b>
-                    <button>Trocar de Plano</button>
+                    <button className={styles.botao}>Trocar de Plano</button>
                 </div>
                 <div className={styles.term}>
                     <p>
