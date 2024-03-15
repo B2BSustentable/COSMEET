@@ -9,7 +9,8 @@ import Plans from './page/home/Planos';
 
 import ProfileCompany from './page/aplicacao/ProfileCompany';
 import Profile from './page/aplicacao/Profile';
-
+import ChangePlan from "./page/aplicacao/ChangePlan"
+import Favorite from './page/aplicacao/Favorite';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/company" element={<ProfileCompany />} />
+        <Route path="/plans" element={<ChangePlan />} />
+        <Route path="/favorite" element={<Favorite />} />
+
 
       </Routes>
     </Router>

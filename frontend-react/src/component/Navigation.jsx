@@ -16,7 +16,7 @@ export default function SimpleBottomNavigation() {
       case '/profile':
         setValue(1);
         break;
-      case '/dashboard':
+      case '/favorite':
         setValue(2);
         break;
       default:
@@ -45,7 +45,7 @@ export default function SimpleBottomNavigation() {
       >
         <BottomNavigationAction label="Home" component={Link} to="/home" />
         <BottomNavigationAction label="Perfil" component={Link} to="/profile" />
-        <BottomNavigationAction label="Dashboard" component={Link} to="/dashboard" />
+        <BottomNavigationAction label="Favoritos" component={Link} to="/favorite" />
       </BottomNavigation>
     </Box>
   );
