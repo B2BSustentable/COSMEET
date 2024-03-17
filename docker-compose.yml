@@ -7,13 +7,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-
-  frontend:
-    build:
-      context: ./frontend-react
-      dockerfile: Dockerfile
-    ports:
-      - "5173:5173"
+    networks:
+      app_net:
+        ipv4_address: 172.20.0.2
 
   backendNode:
     build:
@@ -21,6 +17,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
+    networks:
+      app_net:
+        ipv4_address: 172.20.0.4
 
   db:
     image: mysql:5.7
@@ -31,3 +30,12 @@ services:
       - "3306:3306"
     volumes:
       - ./data/mysql:/var/lib/mysql
+    networks:
+      app_net:
+        ipv4_address: 172.20.0.3
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
