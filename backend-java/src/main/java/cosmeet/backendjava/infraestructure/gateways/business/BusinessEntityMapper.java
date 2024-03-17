@@ -5,6 +5,9 @@ import cosmeet.backendjava.domain.entity.User;
 import cosmeet.backendjava.infraestructure.persistence.business.BusinessEntity;
 import cosmeet.backendjava.infraestructure.persistence.user.UserEntity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BusinessEntityMapper {
     BusinessEntity toEntity(Business userDomainObj) {
         return new BusinessEntity(
@@ -34,5 +37,9 @@ public class BusinessEntityMapper {
             businessEntity.getUser(),
             businessEntity.getPlans()
         );
+    }
+
+    List<Business> toDomainObjList(List<BusinessEntity> businessEntities) {
+        return businessEntities.stream().map(this::toDomainObj).collect(Collectors.toList());
     }
 }

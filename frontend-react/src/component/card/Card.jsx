@@ -1,18 +1,22 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Button } from '@mui/material';
-import loreal from '../../assets/l-oreal-3.svg';
+import { Link, useNavigate } from "react-router-dom";
 
-export default function CardEmpresa() {
+const CardEmpresa = ({ id, name, photo, about }) => {
   const [expanded, setExpanded] = React.useState(false);
+  const Navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleGoToCompany = () => {
+    Navigate(`/company/${id}`);
+  }
 
   return (
     <Card sx={{ minWidth: 190, maxWidth: 900 }}>
@@ -20,23 +24,20 @@ export default function CardEmpresa() {
         <CardMedia
           component="img"
           height="100"
-          image={loreal} 
-          alt="L'Oreal"
+          image={photo || ""}
+          alt={name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            L'Oreal
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <b>Batom, Creme, Shampoo</b>
+            {name}
           </Typography>
           {expanded && (
             <Typography variant="body2" color="text.secondary">
-              A L'Oréal é uma empresa líder global em cosméticos e produtos de beleza. É conhecida por sua extensa linha de produtos para cuidados com a pele, maquiagem, fragrâncias e cuidados com os cabelos.
+              <b>{about}</b>
             </Typography>
           )}
           {expanded && (
-            <Button component={Link} to="/company" color="primary">
+            <Button onClick={handleGoToCompany} color="primary">
               Mais informações  
             </Button>
           )}
@@ -45,3 +46,5 @@ export default function CardEmpresa() {
     </Card>
   );
 }
+
+export default CardEmpresa;

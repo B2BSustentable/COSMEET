@@ -1,24 +1,26 @@
+import React, { useState } from "react";
 import styles from "../homeApp/HomeLeft.module.css";
-import nivea from "../../assets/nivea.svg";
-import logo from "../../assets/logo.png";
-
-import SearchCategory from "../../component/SearchCategory";
 import Navigation from "../Navigation";
 import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
-export default function HomeLeft() {
+export default function HomeLeft({ onSearchTermChange, empresaFoto, empresaNome }) {
+  const handleSearchTermChange = (term) => {
+    onSearchTermChange(term);
+  };
+
   return (
     <>
       <div className={styles.left}>
         <div className={styles.top}>
           <div className={styles.icon}>
-            <img src={nivea} />
+            <img className={styles.logo} src={empresaFoto} alt="Company Logo" />
             <span>
-              Olá <b>NIVEA</b>
+              Olá <b>{empresaNome} !</b>
             </span>
           </div>
-          <img src={logo} className={styles.logo} alt="logo" />
+          <img src={logo} className={styles.logo} alt="Logo" />
         </div>
         <div className={styles.navigation}>
           <Navigation />
@@ -26,10 +28,10 @@ export default function HomeLeft() {
         <div className={styles.search}>
           <span>Pesquisa:</span>
           <br />
-          <SearchBar />
+          <SearchBar onSearchTermChange={handleSearchTermChange} />
         </div>
         <div className={styles.category}>
-          <SearchCategory key={0} />
+          {/* <SearchCategory key={0} /> */}
         </div>
         <div className={styles.end}>
           <b>PREMIUM</b>

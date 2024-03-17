@@ -9,49 +9,71 @@ import Confirm from "../../assets/home/confirm.svg";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
+import { registerUser } from "../../../api/services/user";
 
 function Planos() {
     const navigate = useNavigate();
-
     const [opacity, setOpacity] = useState({
         Basic: 0.5,
         Common: 0.5,
         Premium: 0.5,
     });
 
-    const [inputTipoPlano, setInputTipoPlano] = useState([
-        { value: "EMPRESA_BASIC", label: "Plano Básico" },
-        { value: "EMPRESA_COMMON", label: "Plano Intermediário" },
-        { value: "EMPRESA_PREMIUM", label: "Plano Avançado" }
-      ]);
-
-    const[inputTipoPlanoA, setInputTipoPlanoA] = useState("");
+    const [inputPlan, setInputPlan] = useState("");
 
     const handleButtonClick = (plan) => {
         const updatedOpacity = { Basic: 0.5, Common: 0.5, Premium: 0.5 };
         updatedOpacity[plan] = 1.0;
         setOpacity({ ...updatedOpacity });
-        if(plan == "Basic"){
-            setInputTipoPlanoA(inputTipoPlano[0].value);
-        }else if(plan == "Common"){
-            setInputTipoPlanoA(inputTipoPlano[1].value);
-        }else{
-            setInputTipoPlanoA(inputTipoPlano[2].value);
+
+        if (plan === "Basic") {
+            setInputPlan(1);
+        } else if (plan === "Common") {
+            setInputPlan(2);
+        } else {
+            setInputPlan(3);
         }
     };
 
-    const handleCadastroClick = () => {
-        var nomeEmpresa = window.sessionStorage.getItem("nomeEmpresa");
-        var email = window.sessionStorage.getItem("emailEmpresa");
-        var senha = window.sessionStorage.getItem("senha");
-        var cnpj = window.sessionStorage.getItem("cnpj");
-        var resposta = cadastrarEmpresa(nomeEmpresa, email, senha, cnpj, inputTipoPlanoA);
+    const handleCadastroClick = async () => {
+        const email = sessionStorage.getItem("email_user");
+        const password = sessionStorage.getItem("password_user");
+        const name = sessionStorage.getItem("name_user");
+        const nameBusiness = sessionStorage.getItem("name_business");
+        const emailBusiness = sessionStorage.getItem("email_business");
+        const occupation = sessionStorage.getItem("occupation");
+        const phone = sessionStorage.getItem("phone");
+        const cnpj = sessionStorage.getItem("cnpj");
+        const tipoPlano = inputPlan;
+
+        console.log(tipoPlano);
+
+        const response = await registerUser(
+            email,
+            name,
+            password,
+            nameBusiness,
+            emailBusiness,
+            occupation,
+            phone,
+            cnpj,
+            tipoPlano
+        );
         
-        if(resposta != null){
-            console.log(resposta);
+        if(response.status === 201){
+            console.log(response);
+            var data = response.data;
+
+            sessionStorage.setItem("business_id", data.id);
+            sessionStorage.setItem("business_email", data.email);
+            sessionStorage.setItem("business_name", data.name);
+            sessionStorage.setItem("business_about", data.about);
+            sessionStorage.setItem("business_photo", data.photo);
+            sessionStorage.setItem("business_occupation", data.occupation);
+            sessionStorage.setItem("business_phone", data.phone);
+            
             alert("Empresa cadastrada com sucesso")
-            logarEmpresa(window.sessionStorage.getItem("emailEmpresa"), window.sessionStorage.getItem("senha"));
-            navigate('/empresa');
+            navigate('/home');
         }else{
             alert("Erro ao cadastrar empresa");
         }

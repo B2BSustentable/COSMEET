@@ -15,6 +15,7 @@ export default function Login() {
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
+        sessionStorage.setItem("email_user", e.target.value);
     }
 
     const handlePassword = (e) => {
@@ -25,6 +26,10 @@ export default function Login() {
         const response = await loginUser(email, password);
         if (response.status === 200) {
             console.log("Login realizado com sucesso");
+
+            const data = await response.data;
+            sessionStorage.setItem("id_user", data.id);
+
             Navigate("/login/auth")
         } else {
             console.log("Erro ao realizar login" + response.status);

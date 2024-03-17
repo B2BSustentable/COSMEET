@@ -11,7 +11,6 @@ public record CreateBusinessRequest (
     String about,
     String photo,
     String occupation,
-
     User user,
     Plans plans
 ) {

@@ -1,17 +1,11 @@
 package cosmeet.backendjava.main;
 
 import cosmeet.backendjava.application.gateways.BusinessGateway;
-import cosmeet.backendjava.application.gateways.UserGateway;
-import cosmeet.backendjava.application.usecases.business.CreateBusinessInterface;
-import cosmeet.backendjava.application.usecases.user.CreateUserInterface;
+import cosmeet.backendjava.application.usecases.business.*;
 import cosmeet.backendjava.domain.dto.business.BusinessDTOMapper;
-import cosmeet.backendjava.domain.dto.user.UserDTOMapper;
 import cosmeet.backendjava.infraestructure.gateways.business.BusinessEntityMapper;
 import cosmeet.backendjava.infraestructure.gateways.business.BusinessRepositoryGateway;
-import cosmeet.backendjava.infraestructure.gateways.user.UserEntityMapper;
-import cosmeet.backendjava.infraestructure.gateways.user.UserRepositoryGateway;
 import cosmeet.backendjava.infraestructure.persistence.business.BusinessRepository;
-import cosmeet.backendjava.infraestructure.persistence.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,6 +14,26 @@ public class BusinessConfig {
     @Bean
     CreateBusinessInterface createBusinessUseCase(BusinessGateway businessGateway) {
         return new CreateBusinessInterface(businessGateway);
+    }
+
+    @Bean
+    GetAllBusinessInterface getAllBusinessUseCase(BusinessGateway businessGateway) {
+        return new GetAllBusinessInterface(businessGateway);
+    }
+
+    @Bean
+    GetSearchBusinessInterface getSearchBusinessInterface(BusinessGateway businessGateway) {
+        return new GetSearchBusinessInterface(businessGateway);
+    }
+
+    @Bean
+    GetBusinessInterface getBusinessInterface(BusinessGateway businessGateway) {
+        return new GetBusinessInterface(businessGateway);
+    }
+
+    @Bean
+    UpdateBusinessInterface updateBusinessInterface(BusinessGateway businessGateway) {
+        return new UpdateBusinessInterface(businessGateway);
     }
 
     @Bean
