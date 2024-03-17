@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  backendJava:
+  backend-java:
     build:
       context: ./backend-java
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
       app_net:
         ipv4_address: 172.20.0.2
 
-  backendNode:
+  backend-node:
     build:
       context: ./backend-node
       dockerfile: Dockerfile
