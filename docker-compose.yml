@@ -36,7 +36,7 @@ services:
       context: ./frontend-react
       dockerfile: Dockerfile
     ports:
-      "5173:5173"
+      - "5173:5173"
     networks:
       app_net:
         ipv4_address: 172.20.0.5
