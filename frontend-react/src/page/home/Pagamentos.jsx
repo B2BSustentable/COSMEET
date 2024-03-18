@@ -99,7 +99,7 @@ export default function Pagamentos() {
                   qrcode=00020101021226970014BR.GOV.BCB.PIX0127
                   5204000053039865405123.455802BR5925nome_titular6009cidade62070503valor63042E2F
                 </span>
-                <button>Copiar Código Pix</button>
+                <button className={styles.button_finish}>Copiar Código Pix</button>
               </div>
               <img src={pix} alt="" />
             </div>
