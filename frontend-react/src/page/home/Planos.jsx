@@ -72,8 +72,7 @@ function Planos() {
             sessionStorage.setItem("business_occupation", data.occupation);
             sessionStorage.setItem("business_phone", data.phone);
             
-            alert("Empresa cadastrada com sucesso")
-            navigate('/home');
+            navigate('/payment');
         }else{
             alert("Erro ao cadastrar empresa");
         }

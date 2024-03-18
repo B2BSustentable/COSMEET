@@ -11,6 +11,7 @@ import ProfileCompany from './page/aplicacao/ProfileCompany';
 import Profile from './page/aplicacao/Profile';
 import ChangePlan from "./page/aplicacao/ChangePlan"
 import Favorite from './page/aplicacao/Favorite';
+import Pagamentos from './page/home/Pagamentos';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/register/business" element={<RegisterBusiness />} />
         <Route path="/register/plans" element={<Plans />} />
+        <Route path="/payment" element={<Pagamentos />} />
 
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />

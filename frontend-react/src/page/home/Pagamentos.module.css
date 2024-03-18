@@ -1,0 +1,161 @@
+.bg {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-right: 8vw;
+  padding-left: 8vw;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.fluxo {
+  margin-bottom: 30px;
+}
+.fluxo span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linha {
+  border: 1px solid #252525;
+  margin: 15px 0px 15px 0px;
+}
+
+.container_center {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.box_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title span {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.title {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40vw;
+}
+
+.container_input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  width: 30vw;
+}
+
+.input_large {
+  width: 80vw; /* ou qualquer valor que desejar */
+}
+
+.input_small {
+  width: 3vw; /* ou qualquer valor que desejar */
+}
+.input_minor_img {
+  display: flex;
+  align-items: center;
+}
+
+.input_minor_select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: center;
+}
+input {
+  border: none;
+  border-bottom: 1px solid;
+  color: #252525;
+  opacity: 0.5;
+}
+
+.select_wrapper {
+  display: flex;
+  align-items: center; /* Alinha verticalmente com o campo "Código de segurança" */
+  justify-content: flex-start;
+}
+
+.select_input {
+  width: 5vw; /* ou qualquer valor que desejar */
+}
+
+.division {
+    height: 100%;
+}
+
+.division img {
+    height: 250px;
+}
+.box_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.codigo_pix {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.input_pix {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.input_cod_pix {
+  width: 15vw; /* ou qualquer largura desejada */
+  white-space: pre-wrap; /* Quebra de linha preservando os espaços */
+  word-break: break-word; /* Quebra de palavras */
+}
+
+.input_cod_pix {
+  font-weight: 200;
+}
+
+.button_finish {
+    width: 100%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+    background-color: #252525;
+    color: #fafafa;
+}

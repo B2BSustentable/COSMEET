@@ -1,4 +1,4 @@
-import styles from "../home/Planos.module.css";
+import styles from "./ChangePlan.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
 import CloseButtonImg from "../../assets/home/close_button_img.svg";
@@ -168,9 +168,11 @@ function Planos() {
                 </div>
               </div>
             </div>
-
-            <button className={styles.button_plan}>Confirmar</button>
           </div>
+
+            <Link to="/payment">
+              <button className={styles.button}>Confirmar</button>
+            </Link>
         </div>
       </div>
     </>
