@@ -135,7 +135,7 @@ const ModalContent = ({ onClose }) => {
                         <div className={styles.modalTopo}>
                             <div className={styles.modalImg}>
                                 <img src={photo} alt="" />
-                                <input onChange={handlePhoto} type="file" required />
+                                <input onChange={handlePhoto} type="file" />
                             </div>
                             <div className={styles.modalInfoGeral}>
                                 <strong>Informações gerais</strong>

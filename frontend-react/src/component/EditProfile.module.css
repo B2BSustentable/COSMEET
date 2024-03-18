@@ -12,11 +12,17 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
+    padding: 10px 10px 10px 10px;
+
 }
 
-.topo img {
-    height: 30vh;
+
+.img_info img {
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
 }
+
 
 .img_info {
     display: flex;

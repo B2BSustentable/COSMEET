@@ -19,8 +19,10 @@
   gap: 20px;
 }
 
-.logo {
-  height: 5vh;
+.logo_empresa {
+  width: 10vh;
+  border-radius: 50%;
+  height: 10vh;
 }
 
 .navigation {
@@ -83,7 +85,6 @@
   height: 1cm;
   border: none;
 } */
-
 
 .category {
   display: flex;

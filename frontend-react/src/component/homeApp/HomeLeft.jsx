@@ -15,7 +15,7 @@ export default function HomeLeft({ onSearchTermChange, empresaFoto, empresaNome 
       <div className={styles.left}>
         <div className={styles.top}>
           <div className={styles.icon}>
-            <img className={styles.logo} src={empresaFoto} alt="Company Logo" />
+            <img className={styles.logo_empresa} src={empresaFoto} alt="Company Logo" />
             <span>
               Olá <b>{empresaNome} !</b>
             </span>

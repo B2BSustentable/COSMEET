@@ -44,6 +44,7 @@ export default function EditProfile() {
 
         const storedAbout = sessionStorage.getItem("business_about");
         if (storedAbout) {
+            console.log(storedAbout)
             setAbout(storedAbout);
         }
 

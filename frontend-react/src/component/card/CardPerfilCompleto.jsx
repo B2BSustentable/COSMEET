@@ -47,12 +47,6 @@ export default function CardPerfilCompleto() {
               <Link to="/home">
                 <img src={close} className={styles.img_close} alt="X" />
               </Link>
-              <img
-                // src={isFavorited ? fav : unfav}
-                className={styles.img_close}
-                alt=""
-                onClick={handleFavoritedToggle}
-              />
             </div>
           </div>
 

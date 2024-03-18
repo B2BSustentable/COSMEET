@@ -124,8 +124,9 @@
 }
 
 .modalImg img {
-    height: 140px;
-    border-radius: 100px;
+    width: 25vh;
+    border-radius: 50%;
+    height: 25vh;
 }
 
 
