@@ -7,6 +7,7 @@ import cosmeet.backendjava.domain.dto.user.UserDTOMapper;
 import cosmeet.backendjava.domain.entity.User;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,7 +21,14 @@ public class CreateUserController {
 
     @PostMapping
     ResponseEntity<CreateUserResponse> createUser(@Valid @RequestBody CreateUserRequest request) {
-        User user = new UserDTOMapper().toUser(request);
+        String senhaEncriptada = new BCryptPasswordEncoder().encode(request.password());
+        CreateUserRequest requestComSenhaEncriptada = new CreateUserRequest(
+                request.name(),
+                request.email(),
+                senhaEncriptada
+        );
+
+        User user = new UserDTOMapper().toUser(requestComSenhaEncriptada);
         User createdUser = createUserInterface.createUser(user);
 
         return ResponseEntity
